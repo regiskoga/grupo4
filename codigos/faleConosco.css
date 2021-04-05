@@ -16,12 +16,28 @@ body{
 }
 
 .tamanhologo{
-    width: 60%;
+    width: 50%;
+}
+
+.tamanhouser{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.seta{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    margin-top: 33px;
+    margin-bottom: 3px;
 }
 
 .alinhacaminho{
     text-align: right;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-right: 60%;
     font-size: 10px;
 }
