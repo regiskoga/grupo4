@@ -4,25 +4,30 @@ body{
 
 .topo{
     background-color: blueviolet;
+    border-radius: 5px;
     display: flex;
     color: white;
 }
 
 .alinhalogo{
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.tamanhologo{
+    width: 60%;
 }
 
 .alinhacaminho{
     text-align: right;
-    margin-left: 10px;
+    margin-top: 60px;
     margin-right: 60%;
     font-size: 10px;
 }
 
 .pai{
     background-image: url(../imagens/5026563.jpg);
-    display: flex;
 }
 
 .w-10{
@@ -36,8 +41,13 @@ body{
 .w-30{
     width: 30%;
 }
+
 .w-70{
     width: 70%;
+}
+
+.w-85{
+    width: 85%;
 }
 
 .menu{
@@ -54,17 +64,61 @@ p{
     padding-left: 10px;
 }
 
-
-
 .textcenter{
     text-align: center;
 }
 
+.textright{
+    text-align: right;
+}
+
 .flex{
     display: flex;
+    margin-bottom: 5px;
 }
 
 .box{
     background-color: white;
     border-radius: 25px;
+    width: 40%;
+    margin-left: 5px;
 }
+
+.mais{
+    background-color: rgb(122, 219, 24);
+    color: black;
+    font-size: 15px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 5px;
+}
+
+.botao{
+    background-color: blueviolet;
+    color: white;
+    margin-top: 100px;
+    margin-right: 30%;
+    margin-left: 56%;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.rodape{
+    background-color: blueviolet;
+    border-radius: 5px;
+    display: flex;
+    color: white;
+    padding: 10px;
+}
+
+.logoredes{
+    width: 20%;
+    margin: 1px;
+}
+
+.textorodape{
+    text-align: right;
+    padding: 5px;
+}
+
