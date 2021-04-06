@@ -66,7 +66,7 @@ body{
     width: 85%;
 }
 
-.menu{
+.fundobranco{
     background-color: white;
     margin: 20px;
     border-radius: 10px;
@@ -96,9 +96,10 @@ p{
 
 .box{
     background-color: white;
-    border-radius: 25px;
+    border-radius: 5px;
     width: 40%;
     margin-left: 5px;
+    border: solid 1px gray;
 }
 
 .mais{
@@ -113,7 +114,7 @@ p{
 .botao{
     background-color: blueviolet;
     color: white;
-    margin-top: 100px;
+    margin-top: 4%;
     margin-right: 30%;
     margin-left: 56%;
     padding: 6px;
