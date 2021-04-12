@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', Calibri, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --blue: #4169e1;
+    --medblue: #0000cd;
+    --white: #ffffff;
+    --black: #000;
+}
+
+.container {
+    height: 100vh;
+    /* width: 100vw; */
+    background: url(../images/corporate.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 70px;
+    background-color: var(--blue);
+}
+
+header img {
+    padding: 8px;
+    height: 100%;
+}
+
+.logo {
+    margin-left: 20px;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    font-size: 1.8rem;
+    list-style-type: none;
+    padding: 24px 20px;
+    margin-right: 10px;
+}
+
+li:hover {
+    background-color: var(--medblue);
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.left_side {
+    background-color: var(--white);
+    height: 100%;
+    width: 50%;
+    border-radius: 30px;
+    margin: 20px 10px 20px 20px;
+}
+
+.dados {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 87%;
+    border-radius: 30px;
+    
+}
+.buttom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+
+}
+.buttom button{
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    margin: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.right_side {
+    background-color: var(--white);
+    height: 100%;
+    width: 50%;
+    border-radius: 30px;
+    margin: 20px 20px 20px 10px;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    height: 40px;
+    background-color: var(--blue);
+    bottom: 0;
+    color: var(--white);
+}
+
+.social {
+    height: 100%;
+    padding: 5px;
+}
+
+.social img {
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+footer h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
