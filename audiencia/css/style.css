@@ -179,7 +179,7 @@ section .contentBx .formBx .sci li:hover {
 
 section .contentBx .formBx .sci li img {
     transform: scale(0.5);
-    filter: invert(1);
+/*    filter: invert(1);*/
 }
 
 section .contentBx .formBx .sci img {
