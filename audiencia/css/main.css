@@ -29,7 +29,7 @@ header{
     display: flex;
     align-items: flex-end;
     align-items: center;
-    background: var(--blue);
+    background: #FE9410;
     flex-grow: 1;
 }
 .logo{
@@ -59,7 +59,7 @@ header{
 
 .menu{
     display: flex;
-    background: var(--blue);
+    background: #FE9410;
     flex-grow: 1;
 }
 ul{
@@ -91,7 +91,7 @@ footer{
     color: var(--white);
     display: flex;
     flex-grow: 1;
-    background: var(--blue);
+    background: #FE9410;
 }
 .social{
     padding: 10px;
