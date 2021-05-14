@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+
+<style>
+    nav {
+        display: flex;
+        margin-bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+    nav li {
+        list-style: none;
+        display: inline;
+        padding: 10px;
+        height: 20px;
+        border-right: 1px solid white;
+        width: 130px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 70%;
+        color: white;
+    } 
+
+</style>
+
+<nav>
+    <ul>
+        <li class="<%= pagina === 'home' ? 'selecionado' : '' %>"><a href="/">HOME</a></li>
+        <li><a href="#">QUEM SOMOS</a></li>
+        <li><a href="#">SERVIÇOS</a></li>
+        <li><a href="#">PORTIFÓLIO</a></li>
+        <li><a href="#">CONTATO</a></li>
+        <li><a href="/login">ENTRAR</a></li>
+    </ul>
+    
+</nav>
