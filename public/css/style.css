@@ -1,0 +1,23 @@
+body {
+  background-image: url(../img/arch-hero-t.png);
+  margin-left: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.justificar {
+  text-align: justify;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  color: #008ae6;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 24%;
+  text-align: center;
+}
