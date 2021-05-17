@@ -1,0 +1,222 @@
+/* variáveis */
+
+:root {
+    --blue: #4169e1;
+    --medblue: #0000cd;
+    --white: #ffffff;
+    --black: #000;
+}
+
+/* definições */
+html{
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri';
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* todas as sessões */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imgBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+section .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #0000cd38, #00ff883d);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+section .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .contentBx {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+section .contentBx .formBx {
+    width: 100%;
+}
+
+section .contentBx .formBx .logoBx {
+    display: flex;
+    justify-content: center;
+}
+
+section .contentBx .formBx .logoBx img {
+    width: 60%;
+}
+
+/* section .contentBx .formBx h2{
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--blue);
+    display: inline-block;
+    letter-spacing: 1px;
+
+} */
+
+section .contentBx .formBx .inputBx {
+    margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx span {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607db8;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid var(--blue);
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    color: var(--blue);
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"] {
+    background: var(--blue);
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: var(--medblue);
+}
+
+section .contentBx .formBx .remember label {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--blue);
+    font-weight: 400;
+}
+
+section .contentBx .formBx .inputBx p {
+    font-size: 1.4rem;
+    color: var(--blue);
+}
+
+section .contentBx .formBx .inputBx p a {
+    color: var(--blue);
+}
+
+section .contentBx .formBx h3 {
+    color: var(--blue);
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 500;
+}
+
+section .contentBx .formBx .sci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentBx .formBx .sci li {
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue);
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .sci li:hover {
+    background: var(--blue);
+}
+
+section .contentBx .formBx .sci li img {
+    transform: scale(0.5);
+/*    filter: invert(1);*/
+}
+
+section .contentBx .formBx .sci img {
+    width: 110px;
+    border-radius: 60px;
+}
+
+@media (max-width: 768px) {
+    section .contentBx .formBx .logoBx img {
+        width: 30%;
+    }
+
+    section .imgBx {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section .contentBx {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    section .contentBx .formBx {
+        width: 100%;
+        padding: 40px;
+        background: rgb(255 255 255 / 0.7);
+        margin: 50px;
+    }
+    section .contentBx .formBx h3 {
+        color: var(--blue);
+        text-align: center;
+        margin: 30px 0 10px;
+        font-weight: 500;
+    }
+}
