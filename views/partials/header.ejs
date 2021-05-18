@@ -1,5 +1,5 @@
-<link rel='stylesheet' href='/css/style.css' />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+<link rel='stylesheet' href='/css/style.css' />
 
 <style>
     nav {
@@ -26,12 +26,12 @@
 
 <nav>
     <ul>
-        <!--<li class="<%= pagina === 'home' ? 'selecionado' : '' %>"><a href="/">HOME</a></li>-->
-        <li><a href="/">HOME</a></li>
+        <li class="<%= pagina === 'home' ? 'selecionado' : '' %>"><a href="/">HOME</a></li>
+       <!-- <li><a href="/">HOME</a></li>-->
         <li><a href="#">QUEM SOMOS</a></li>
         <li><a href="#">SERVIÇOS</a></li>
         <li><a href="#">PORTIFÓLIO</a></li>
-        <li><a href="/login/cadastro">CADASTRAR</a></li>
+        <li class="<%= pagina === 'cadastro' ? 'selecionado' : '' %>"><a href="/login/cadastro">CADASTRAR</a></li>
         <li><a href="/login">ENTRAR</a></li>
     </ul>
     

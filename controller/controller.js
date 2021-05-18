@@ -6,9 +6,13 @@ module.exports.renderizar = (req, res) => {
 }
 
 module.exports.login = (req, res) => {
-    res.render('login');
+    res.render('login', {
+      pagina: 'login'
+    });
 };
 
 module.exports.cadastrar = (req, res) => {
-  res.render('cadastro');
+  res.render('cadastro', {
+    pagina: 'cadastro'
+  });
 }
