@@ -4,25 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Cadastro</title>
+
 </head>
 <body>
-    <%- include ('partials/header.ejs', {pagina: pagina}) %>
-    <h1>OLA</h1>
+    <%- include partials/header2.ejs %>
     <div class="container">
         
         <div>
-            <h1>CADASTRO</h1>
+            <h1 class="size2 center">CADASTRO</h1>
             <form action="">
-                <label for="nome">Nome:</label>
-                <input type="text" />
-                <label for="email">E-mail:</label>
-                <input type="email" />
-                <label for="senha">Senha:</label>
-                <input type="senha" />
-                <input type="button" name="criar" id="" label="Criar Conta" />
+                <div class="field">
+                    <label class="label">Nome:</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input is-warning" type="text" placeholder="Seu Nome" required=true>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                      <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                </div>                    
+                    <div class="field">
+                        <label class="label">E-mail:</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input is-warning" type="email" placeholder="seu_nome@dominio.com.br">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">Senha:</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input is-warning" type="password" placeholder="8 caracteres ou mais">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field is-grouped">
+                        <div class="control">
+                          <input class="button is-warning" type="submit"/>
+                        </div>
+                        <div class="control">
+                          <button class="button is-warning is-light">Cancel</button>
+                        </div>
+                      </div>
             </form>
         </div>
       <footer>

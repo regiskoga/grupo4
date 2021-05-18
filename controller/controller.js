@@ -1,6 +1,6 @@
 module.exports.renderizar = (req, res) => {
   res.render('index', { 
-    title: 'Your Webinar',
+    title: 'ALERA Webinar',
     pagina: 'home'
    });
 }

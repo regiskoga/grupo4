@@ -9,12 +9,29 @@ body {
 }
 
 h1 {
-  font-weight: 700;
+  color: #FE9410;
 }
 
 h2 {
-  color: #008ae6;
+  color: #e67300;
   font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.size1 {
+  font-size: 40px;
+}
+
+.size2 {
+  font-size: 30px;
+}
+
+
+.size3 {
+  font-size: 20px;
 }
 
 footer {
