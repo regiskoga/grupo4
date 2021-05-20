@@ -17,21 +17,28 @@ h2 {
   font-weight: bold;
 }
 
+.margin-top {
+  margin-top: 5%;
+}
+
+.color {
+  background:  #fe9410;
+}
 .center {
   text-align: center;
 }
 
 .size1 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .size2 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
 .size3 {
-  font-size: 20px;
+  font-size: 10px;
 }
 
 footer {
