@@ -101,6 +101,16 @@ header a {
     padding: 10px 1px;
     height: 100%;
     width: 20%;
+    text-align: center;
+}
+.chat h3{
+margin-top: 100%;
+background: var(--blue);
+color: white;
+padding: 2rem;  
+border-radius: 2rem;
+    border:var(--medblue) solid 0.2rem;
+    font-size: 2rem;  
 }
 .resp-chat{
     height: 100%;
@@ -161,4 +171,17 @@ footer {
 footer h3 {
     font-size: 1.6rem;
     font-weight: 400;
+}
+
+.cronometro{
+    padding: 2rem;
+    text-align: center;
+    background: var(--blue);
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    border:var(--medblue) solid 0.2rem;
+}
+.cronometro h1{
+    padding: 1rem;
+    font-size: 4rem;
 }
