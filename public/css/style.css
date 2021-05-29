@@ -7,7 +7,7 @@ body {
 .imgfundo {
   background-image: url(../img/arch-hero-t-final.png);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 .justificar {
