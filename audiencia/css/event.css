@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', Calibri, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    background: url(../images/corporate.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+:root {
+    --blue: #4169e1;
+    --medblue: #0000cd;
+    --white: #ffffff;
+    --black: #000;
+}
+
+.container {
+    height: 100vh;
+    /* width: 100vw; */
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 70px;
+    background-color: var(--blue);
+}
+
+header img {
+    padding: 8px;
+    height: 100%;
+}
+
+.logo {
+    margin-left: 20px;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    font-size: 1.8rem;
+    list-style-type: none;
+    padding: 24px 20px;
+    margin-right: 10px;
+}
+
+li:hover {
+    background-color: var(--medblue);
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    height: 90%;
+}
+
+.player {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+}
+
+.resp-iframe{
+    padding-top: 7rem;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.chat {
+    padding: 10px 1px;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}
+.chat h3{
+margin-top: 100%;
+background: var(--blue);
+color: white;
+padding: 2rem;  
+border-radius: 2rem;
+    border:var(--medblue) solid 0.2rem;
+    font-size: 2rem;  
+}
+.resp-chat{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.container-files{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+
+}
+.files {
+    padding-top: 18px;
+    font-size: 1.6rem;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.files a{
+    background-color: var(--blue);
+    color: var(--white);
+    padding:10px;
+    margin-right: 2rem;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    height: 40px;
+    background-color: var(--blue);
+    bottom: 0;
+    color: var(--white);
+}
+
+.social {
+    height: 100%;
+    padding: 5px;
+}
+
+.social img {
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+footer h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.cronometro{
+    padding: 2rem;
+    text-align: center;
+    background: var(--blue);
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    border:var(--medblue) solid 0.2rem;
+}
+.cronometro h1{
+    padding: 1rem;
+    font-size: 4rem;
+}
