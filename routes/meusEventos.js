@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET events listing. */
 router.get('/', function(req, res, next) {
-  res.render('MeusEventos');
+  res.render('meusEventos');
 });
 
 module.exports = router;
