@@ -80,14 +80,15 @@ module.exports.login = function (req, res) {
   const foundUser = find(email,users, 'email');
 
   if (!foundUser) {
-    res.render('login');
+    return res.render('login');
   }
 
   if (!compareHash(password, foundUser.password)) {
-    res.render('login');
-  }
+    return res.render('login');
+  } else {
 
   req.session.usuario = foundUser;
 
-  res.redirect('/');
+  res.redirect('/meusEventos');
+  }
 }
