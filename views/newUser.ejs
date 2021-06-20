@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="./css/admin.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./common/header.ejs')%>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <%- include('./common/adminNav.ejs') %>
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div
+                                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                    <h1 class="h2">Criar Novo Usuário</h1>
+                                    <div class="btn-toolbar mb-2 mb-md-0">
+                                        <div class="btn-group me-2">
+                                            <a href="/inscritos" class="btn btn-sm btn-outline-primary">Voltar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/newUser" method="POST">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Nome de Usuário</label>
+                                            <input type="text" class="form-control" id="username" name="username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Nome Completo</label>
+                                            <input type="text" class="form-control" id="name" name="name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">E-mail</label>
+                                            <input type="email" class="form-control" id="email" name="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Inserir</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+            integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+            crossorigin="anonymous"></script>
+        <script src="./js/admin.js"></script>
+        <script>
+            const link = window.location.href;
+            document.getElementById("eventUrl").innerHTML = link.replace('/event', '') + "/live";
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#subscribers').DataTable({
+                    "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+                    "pageLength": 50,
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json'
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>
