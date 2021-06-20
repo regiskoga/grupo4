@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "u354805859_grupo4",
+    "password": "@Grupo04",
+    "database": "u354805859_grupo4",
+    "host": "177.234.145.195",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
