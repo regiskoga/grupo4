@@ -37,7 +37,6 @@
                 <%- include('./common/adminNav.ejs') %>
 
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
                         <!-- Title Header, in this case "Inscritos" -->
                         <div
                             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -65,41 +64,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <% for (const result of results){ %>
                                                 <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>61</td>
+                                                    <td><%=result.name%></td>
+                                                    <td><%=result.username%></td>
+                                                    <td><%=result.email%></td>
+                                                    <td><%=result.createdAt%></td>
                                                 </tr>
+                                                <% } %>
                                                 <tr>
                                                     <td>Garrett Winters</td>
                                                     <td>Accountant</td>
                                                     <td>Tokyo</td>
                                                     <td>63</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Ashton Cox</td>
-                                                    <td>Junior Technical Author</td>
-                                                    <td>San Francisco</td>
-                                                    <td>66</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cedric Kelly</td>
-                                                    <td>Senior Javascript Developer</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>22</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Airi Satou</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>33</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Donna Snider</td>
-                                                    <td>Customer Support</td>
-                                                    <td>New York</td>
-                                                    <td>27</td>
                                                 </tr>
                                             </tbody>
                                         </table>

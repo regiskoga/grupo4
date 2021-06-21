@@ -9,6 +9,7 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "datatables.net-bs5": "^1.10.25",
+    "date-and-time": "^1.0.1",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
