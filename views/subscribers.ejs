@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div>
-                                        <table id="subscribers" class="display" style="width:100%">
+                                        <table id="subscribers" class="table table-hover" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th>Nome</th>
@@ -64,20 +64,15 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <% for (const result of results){ %>
+                                                <%
+                                                for (const result of results){ %>
                                                 <tr>
-                                                    <td><%=result.name%></td>
+                                                    <td><%=result.id + result.name%></td>
                                                     <td><%=result.username%></td>
                                                     <td><%=result.email%></td>
-                                                    <td><%=result.createdAt%></td>
+                                                    <td><%=moment(result.createdAt).format('DD/MM/yyyy HH:mm')%></td>
                                                 </tr>
                                                 <% } %>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

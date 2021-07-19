@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.NUMBER
-      },
       username: {
         type: Sequelize.STRING
       },
@@ -23,12 +20,6 @@ module.exports = {
       userType: {
         type: Sequelize.NUMBER
       },
-      createdAt: {
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        type: Sequelize.DATE
-      },
       password: {
         type: Sequelize.STRING
       },
@@ -39,6 +30,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      logins: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       }
     });
   },
