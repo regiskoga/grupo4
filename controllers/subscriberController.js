@@ -4,7 +4,7 @@ const moment = require('moment')
 moment.locale('pt-BR')
 
 module.exports = (async (req, res) => {
-  const results = await models.Users.findAll()
+  const results = await models.Users.findAll({ where: { active: 1 } })
   
   res.render('subscribers', {results, moment:moment});
 })
