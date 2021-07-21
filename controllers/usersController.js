@@ -20,6 +20,7 @@ module.exports.createUsersPage = (async (req, res) => {
 module.exports.showUserById = (async (req, res) => {
     const userId = parseInt(req.params.id)
     const results = await models.Users.findAll({ where: { id: userId } })
+    results.screen=1
     res.render('newUser', {results, moment:moment})
 })
 

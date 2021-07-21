@@ -27,87 +27,78 @@
 </head>
 
 <body>
-    <%-include('./common/header.ejs')%>
+    <%-include('./common/header.ejs') %>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
 
-            <!-- this is the nav -->
-            <%- include('./common/adminNav.ejs') %>
+                <!-- this is the nav -->
+                <%- include('./common/adminNav.ejs') %>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-                    <!-- Title Header, in this case "eventos" -->
-                    <div
-                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Eventos</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="btn-group me-2">
-                                <button type="button" class="btn btn-sm btn-outline-success">+ Novo</button>
-                                <button type="button" class="btn btn-sm btn-outline-primary">Exportar</button>
+                        <!-- Title Header, in this case "eventos" -->
+                        <div
+                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Eventos</h1>
+                            <div class="btn-toolbar mb-2 mb-md-0">
+                                <div class="btn-group me-2">
+                                    <button type="button" class="btn btn-sm btn-outline-success">+ Novo</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary">Exportar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- cards for each event listed -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card mb-3">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-2">
-                                            <a href="./event"><img class="img-thumbnail m-2" src="./img/event1.jpg" alt="A Jornada do Aluno"></a>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><a href="./event">A Jornada do Aluno</a></h5>
-                                                <p class="card-text">Evento destinado a discutir as dificuldades de se fazer um curso de tecnologia durante a Pandemia do Covid.</p>
-                                                <p class="card-text"><small class="text-muted">31/08/2021 às 18h - 20 inscritos - 32 visualizações</small></p>
+                        <div class="container">
+                            <!-- cards for each event listed -->
+                            <% for (let result of results){ 
+                                if (result.activeEvent == 1){
+                                    activeEvent = "Publicado"
+                                    statusColor = "bg-success"
+                                }else{
+                                    activeEvent = "Não Publicado"
+                                    statusColor = "bg-danger"
+                                }
+                            %>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card mb-3">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-2">
+                                                <a href="./event"><img class="img-thumbnail m-2" src="./img/event1.jpg"
+                                                        alt="<%=result.title%>>"></a>
                                             </div>
-                                        </div>
-                                        <div class="col-md-2 align-self-center text text-center">
-                                            <span class="badge bg-success">Publicado</span>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="./event"><%=result.title%></a></h5>
+                                                    <p class="card-text"><%=result.subtitle%></p>
+                                                    <p class="card-text"><small class="text-muted"><%=moment(result.eventTerm).format('DD/MM/yyyy [às] HH:mm')%> -
+                                                            <%=result.accessCount%> visualizações</small></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 align-self-center text text-center">
+                                                <span class="badge <%=statusColor%>"><%=activeEvent%></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <% } %>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card mb-3">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-2">
-                                            <a href="./event"><img class="img-thumbnail m-2" src="./img/fastfood.jpg" alt="A Jornada do Aluno"></a>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><a href="./event">Fast Food no Brasil</a></h5>
-                                                <p class="card-text">Outro tema que engloba dificuldade na alimentação.</p>
-                                                <p class="card-text"><small class="text-muted">31/03/2021 às 15h - 200 inscritos - 302 visualizações</small></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 align-self-center text text-center">
-                                            <span class="badge bg-danger">Não Publicado</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </main>
+                    </main>
+            </div>
         </div>
-    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
-        crossorigin="anonymous"></script>
-    <script src="./js/admin.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+            integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+            crossorigin="anonymous"></script>
+        <script src="./js/admin.js"></script>
 </body>
 
 </html>
