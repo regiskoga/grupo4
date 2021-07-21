@@ -10,6 +10,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="./css/admin.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -61,17 +62,19 @@
                                                     <th>Usuário</th>
                                                     <th>E-mail</th>
                                                     <th>Criação</th>
+                                                    <th>Ação</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <%
                                                 for (const result of results){ %>
                                                 <tr>
-                                                    <td><%=result.id + result.name%></td>
+                                                    <td><%=result.name%></td>
                                                     <td><%=result.username%></td>
                                                     <td><%=result.email%></td>
                                                     <td><%=moment(result.createdAt).format('DD/MM/yyyy HH:mm')%></td>
-                                                </tr>
+                                                    <td><a style="text-decoration: none;" href="/newUser/<%=result.id%>"><i class="icon-signin"></i></a></td>
+                                                    </tr>
                                                 <% } %>
                                             </tbody>
                                         </table>
