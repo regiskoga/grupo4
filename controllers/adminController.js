@@ -7,3 +7,4 @@ module.exports = (async (req, res) => {
   const results = await models.Events.findAll({ order: [ ['activeEvent', 'DESC'], ['eventTerm'] ] })
   res.render('admin', {results, moment:moment});
 })
+
