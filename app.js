@@ -9,7 +9,7 @@ const adminRouter = require('./routes/admin');
 const eventRouter = require('./routes/event');
 const subscriberRouter = require('./routes/subscribers');
 const liveRouter = require('./routes/live');
-
+const session = require('express-session');
 const app = express();
 
 // view engine setup
@@ -22,13 +22,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret:'senha_forte',
+  maxAge: 480000,
+  resave:false
+}));
+
+
 app.use('/', indexRouter);
 app.use('/inscritos', subscriberRouter);
 app.use('/admin', adminRouter);
 app.use('/event', eventRouter);
 app.use('/live', liveRouter);
-app.use('/newUser',require('./routes/user'))
-
+app.use('/newUser',require('./routes/user'));
 
 
 // catch 404 and forward to error handler
