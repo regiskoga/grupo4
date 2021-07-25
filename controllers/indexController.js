@@ -5,7 +5,10 @@ const session = require('express-session');
 
 module.exports = (req, res) => {
   if(!req.session.estaAutenticado){
-    res.render('index', { title: 'teste do regis' }); //index is EJS filename
+    res.render('index', {
+      title: 'Sistema de Transmissão', 
+      erro: ''
+     }); //index is EJS filename
   }else{
     res.redirect('/admin')
   }
@@ -22,23 +25,15 @@ module.exports.exit = (req, res) => {
 }
 
 module.exports.auth = (async (req, res, next) => {
-  req.session.atenticado = true;
-  const query = querystring.stringify({
-    "erro": "Erro ao acessar"
-  })
   const userData = await models.Users.findOne({ where: { email: req.body.email } })
   if (!req.body.email || !req.body.password) {
-    // return res.status(400).send(
-    //   'Necessário Usuário e Senha para acessar o sistema'
-    // );
-    res.redirect('/?' + query)
+    
+    res.render('index', {title: 'Sistema de Transmissão', erro: 'E-mail e Senha são Obrigatórios' });
   }
   if (typeof userData !== 'undefined' && userData !== null) {
     bcrypt.compare(req.body.password, userData.password, function (err, response) {
       if (err) {
         console.log('erro ao tentar logar')
-        res.send(400)
-        //res.redirect('/?'+ query)
       }
       if (response) {
         req.session.estaAutenticado = true;
@@ -48,15 +43,11 @@ module.exports.auth = (async (req, res, next) => {
 
         res.redirect('/admin')
       } else {
-        //console.log(query)
-        res.send(401)
-        //res.redirect('/?'+ query)
+        res.render('index', {title: 'Sistema de Transmissão', erro: 'Usuário ou senha inválido!' });
       }
     })
   } else {
-    //console.log(query.invalid)
-    //res.redirect('/?'+ query)
-    res.send(401)
+    res.render('index', {title: 'Sistema de Transmissão', erro: 'Usuário ou senha inválido!' });
   }
 
 })
