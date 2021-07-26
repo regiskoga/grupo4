@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     logoPath: DataTypes.STRING,
     loginImagePath: DataTypes.STRING,
     activeChat: DataTypes.NUMBER,
+    activePoll: DataTypes.NUMBER,
+    privateWebinar: DataTypes.NUMBER,
     activeForm: DataTypes.NUMBER,
     activeEvent: DataTypes.NUMBER,
     createdAt: 'timestamp',

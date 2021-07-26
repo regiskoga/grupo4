@@ -38,7 +38,7 @@
                     <!-- event it self -->
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">A Jornada do Aluno</h1>
+                        <h1 class="h2"><%=userData.title%></h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group me-2">
                                 <a href="./admin" class="btn btn-sm btn-outline-primary">Voltar</a>
@@ -50,7 +50,7 @@
                     <div class="container">
                         <div class="card mb-2">
                             <div class="card-header">
-                                <h5 class="card-title">Informações</h5>
+                                <h5 class="card-title">Informações do Evento</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -61,18 +61,20 @@
                                         <form>
                                             <div class="mb-3">
                                                 <label for="eventTitle" class="form-label">Título</label>
-                                                <input type="text" class="form-control" id="eventTitle" value="A Jornada do Aluno">
+                                                <input type="text" class="form-control" id="eventTitle" value="<%=userData.title%>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="accessLink" class="form-label">Link de Acesso</label>
                                                 <a href="./live" id="eventUrl" class="form-control text-decoration-none"></a>
                                             </div>
                                             <div class="input-group mb-3">
-                                                <input type="date" class="form-control" placeholder="Data"
+                                                <input type="date" class="form-control" placeholder="Data" value="<%=moment(userData.eventTerm).format('yyyy-MM-DD')%>"
                                                     aria-label="date" id="eventDate">
                                                 <span class="input-group-text">às</span>
-                                                <input type="time" class="form-control" placeholder="Hora"
+                                                <input type="time" class="form-control" placeholder="Hora" value="<%=moment(userData.eventTerm).format('HH:mm')%>"
                                                     aria-label="hora" id="eventTime">
+                                                <input type="number" class="form-control" placeholder="Perído (min)" value="<%=userData.eventPeriod%>"
+                                                    aria-label="periodo" id="eventPeriod">
                                             </div>
                                         </form>
                                     </div>
@@ -87,22 +89,22 @@
                                 <div class="row mx-1 mt-2 p-2">
                                     <div class="col-3">
                                         <input type="color" class="form-control form-control-color" id="headerColor"
-                                            value="#1A6AFF" title="Cor do Cabeçalho">
+                                            value="<%=userData.headerColor%>" title="Cor do Cabeçalho">
                                         <label for="headerColor">Cor do Cabeçalho</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="color" class="form-control form-control-color" id="FooterColor"
-                                            value="#00000" title="Cor do Rodapé">
+                                            value="<%=userData.footerColor%>" title="Cor do Rodapé">
                                         <label for="headerColor">Cor do Rodapé</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="color" class="form-control form-control-color" id="fontColor"
-                                            value="#3900e5" title="Cor da Fonte">
+                                            value="<%=userData.fontColor%>" title="Cor da Fonte">
                                         <label for="headerColor">Cor da Fonte</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="color" class="form-control form-control-color" id="backColor"
-                                            value="#FFcc25" title="Cor do Fundo">
+                                            value="<%=userData.backColor%>" title="Cor do Fundo">
                                         <label for="headerColor">Cor do Fundo</label>
                                     </div>
                                 </div>
@@ -127,26 +129,26 @@
                                 <div class="row mx-3">
                                     <div class="col-3">
                                         <div class="form-check form-switch mx-3 mt-2">
-                                            <input class="form-check-input" type="checkbox" id="check1" checked>
+                                            <input class="form-check-input" type="checkbox" id="check1" <%=userData.activeChat == '1' ? 'checked' : ''%>>
                                             <label class="form-check-label" for="check1">Chat</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="form-check form-switch mx-3 mt-2">
-                                            <input class="form-check-input" type="checkbox" id="check2" checked>
+                                            <input class="form-check-input" type="checkbox" id="check2" <%=userData.activePoll == '1' ? 'checked' : ''%>>
                                             <label class="form-check-label" for="check2">Enquete</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="form-check form-switch mx-3 mt-2">
-                                            <input class="form-check-input" type="checkbox" id="check2" checked>
-                                            <label class="form-check-label" for="check2">Evento Fechado</label>
+                                            <input class="form-check-input" type="checkbox" id="check2" <%=userData.privateWebinar == '1' ? 'checked' : ''%>>
+                                            <label class="form-check-label" for="check2">Evento Privado</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="form-check form-switch mx-3 mt-2">
-                                            <input class="form-check-input" type="checkbox" id="check2" checked>
-                                            <label class="form-check-label" for="check2">Rodapé</label>
+                                            <input class="form-check-input" type="checkbox" id="check2" <%=userData.activeEvent == '1' ? 'checked' : ''%>>
+                                            <label class="form-check-label" for="check2">Evento Ativo</label>
                                         </div>
                                     </div>
                                 </div>
