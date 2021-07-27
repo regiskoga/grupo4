@@ -2,7 +2,10 @@
 const models = require('../models');
 const bcrypt = require('bcrypt');
 const moment = require('moment')
+
+
 moment.locale('pt-BR')
+
 
 //module.exports = (async (req, res) => {
   // const eventData = await models.Events.findOne({ where: { id: req.query.event } })
@@ -17,6 +20,11 @@ moment.locale('pt-BR')
 
 module.exports = (async (req, res) => {
   const results = await models.Events.findOne({ where: { id: req.query.event } })
+  function writeUserData(userId, name, email, imageUrl) {
+    firebase.database().ref('events/' + req.query.event).set({
+      title: req.query.title,
+    });
+  }
   if (typeof results !== 'undefined' && results !== null) {
     res.render('live', { results, moment: moment });
   }
