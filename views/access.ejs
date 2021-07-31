@@ -36,25 +36,27 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Bem-vindo de volta!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">
+                                            <%=results.title%>
+                                        </h1>
                                     </div>
-                                    <form class="user" action="./" method="POST">
+                                    <form class="user" action="./access" method="POST">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" name="username"
+                                                placeholder="Nome Completo">
+                                        </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" name="email"
                                                 aria-describedby="emailHelp" placeholder="E-mail">
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                name="password" placeholder="Senha">
-                                        </div>
-                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
-                                        <hr>
+                                        <input type="submit" class="btn btn-primary btn-user btn-block"
+                                            value="Acessar o Evento">
+                                        <input type="hidden" name="eventId" value="<%=results.id%>">
                                     </form>
-                                    <%= erro %>
-                                        <hr>
-                                        <div class="text-center">
-                                            <a class="small" href="#">Esqueceu a Senha?</a>
-                                        </div>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="#">Precisando de Ajuda?</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -67,15 +69,14 @@
 
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-
-    <!-- Core plugin JavaScript-->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-
-    <!-- Custom scripts for all pages-->
-    <!-- <script src="js/sb-admin-2.min.js"></script> -->
+    <script>
+        function changeBackground(color) {
+            document.body.style.background = color;
+        }
+        const jsonResults = '<%- JSON.stringify(results) %>';
+        const results = JSON.parse(jsonResults)
+        window.addEventListener("load", function () { changeBackground(results.backgroundColor) });
+    </script>
 
 </body>
 

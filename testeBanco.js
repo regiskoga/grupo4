@@ -1,6 +1,6 @@
 const models = require('./models')
 async function test() {
-    const users = await models.Users.findAll()
-    console.log(users)
+    const dbdata = await models.Users.findAll()
+    console.log(dbdata)
 }
 test()

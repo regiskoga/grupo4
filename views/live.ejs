@@ -29,10 +29,9 @@
 <body>
     <header id="header" class="navbar navbar-dark sticky-top bg-primary px-3">
         <a class="navbar text-decoration-none" href="#">
-            <img src="./img/logo.png" alt="" height="50rem" class="d-inline-block align-text-top">
-            <h3 class="px-3 text-light">
-                <%=results.title%>
-            </h3>
+            <img src="./img/logo.png" alt="" height="60rem" class="d-inline-block align-text-top">
+            <div class="px-3"><h3 class="text-light"><%=results.title%></h3>
+            <p class="muted text-light"><%=results.subtitle%></p></div>
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -78,6 +77,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script>
             document.querySelector("#header").style.removeProperty("bg-primary");
+    </script>
+    <script>
+        const jsonResults = '<%- JSON.stringify(results) %>';
+        const results = JSON.parse(jsonResults)
+        console.log(results)
+        document.querySelector('#header').classList.remove("bg-primary")
+        document.querySelector('#header').style.background = results.backgroundColor
+        document.querySelector('#header').style.color = results.fontColor
+
     </script>
 </body>
 

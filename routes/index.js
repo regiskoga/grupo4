@@ -6,4 +6,6 @@ const indexController = require('../controllers/indexController')
 router.get('/', indexController);
 router.post('/',indexController.auth);
 router.get('/exit', indexController.exit);
+router.get('/access', indexController.access);
+router.post('/access', indexController.createSubscriber);
 module.exports = router;
