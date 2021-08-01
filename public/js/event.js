@@ -25,16 +25,16 @@ function sendPost(url, data){
     request.open("POST", url, true)
     request.setRequestHeader("Content-type", "application/json")
     request.send(JSON.stringify(data))
-    request.onload = function(){
-        console.log(this.responseText)
-    }
+    // request.onload = function(){
+    //     console.log(this.responseText)
+    // }
     return request.responseText
 }
 
 
 function ColorChange() {
     event.preventDefault()
-    const url = '/event/formDataChange'
+    const url = '/event/formColorChange'
     const headerColor = document.querySelector("#headerColor").value
     const footerColor = document.querySelector("#footerColor").value
     const fontColor = document.querySelector("#fontColor").value
@@ -49,3 +49,22 @@ function ColorChange() {
     }
     sendPost(url, Data)
 }
+
+function optionsChange(){
+    const url = '/event/formOptionsChange'
+    const activeChat = (document.querySelector("#activeChat").checked ? 1 : 0)
+    const activePoll = (document.querySelector("#activePoll").checked ? 1 : 0)
+    const privateWebinar = (document.querySelector("#privateWebinar").checked ? 1 : 0)
+    const activeEvent = (document.querySelector("#activeEvent").checked ? 1 : 0)
+    const eventId = document.querySelector("#eventId").value
+    const Data = {
+        "activeChat": activeChat,
+        "activePoll": activePoll,
+        "privateWebinar": privateWebinar,
+        "activeEvent": activeEvent,
+        "eventId": eventId
+    }
+    sendPost(url, Data)
+}
+
+

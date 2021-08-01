@@ -30,8 +30,8 @@
     <header id="header" class="navbar navbar-dark sticky-top bg-primary px-3">
         <a class="navbar text-decoration-none" href="#">
             <img src="./img/logo.png" alt="" height="60rem" class="d-inline-block align-text-top">
-            <div class="px-3"><h3 class="text-light"><%=results.title%></h3>
-            <p class="muted text-light"><%=results.subtitle%></p></div>
+            <div class="px-3 textHeader"><h3 class=""><%=results.title%></h3>
+            <p class="muted textHeader"><%=results.subtitle%></p></div>
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -41,7 +41,7 @@
 
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sair</a>
+                <a class="nav-link" id="exitButton" href="#">Sair</a>
             </li>
         </ul>
     </header>
@@ -80,13 +80,8 @@
     </script>
     <script>
         const jsonResults = '<%- JSON.stringify(results) %>';
-        const results = JSON.parse(jsonResults)
-        console.log(results)
-        document.querySelector('#header').classList.remove("bg-primary")
-        document.querySelector('#header').style.background = results.backgroundColor
-        document.querySelector('#header').style.color = results.fontColor
-
     </script>
+    <script src="./js/live.js"></script>
 </body>
 
 </html>

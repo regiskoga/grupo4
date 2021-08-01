@@ -36,18 +36,36 @@ module.exports.changeImage = ([upload.single('imageFile'), (req, res) => {
 
 }])
 
-module.exports.formDataChange = (async (req, res) => {
+module.exports.formColorChange = (async (req, res) => {
     const headerColor = req.body.headerColor
     const footerColor = req.body.footerColor
     const fontColor = req.body.fontColor
     const backgroundColor = req.body.backgroundColor
     const eventId = req.body.eventId
-    const userData = req.body.userData
+    //const userData = req.body.userData
     data = await models.Events.update(
         { headerColor: headerColor,
           footerColor: footerColor,
           fontColor: fontColor,
           backgroundColor: backgroundColor
+        },
+        { where: { id: eventId } }
+    )
+    res.status(204).end()
+
+})
+
+module.exports.formOptionsChange = (async (req, res) => {
+    const activeChat = req.body.activeChat
+    const activePoll = req.body.activePoll
+    const privateWebinar = req.body.privateWebinar
+    const activeEvent = req.body.activeEvent
+    const eventId = req.body.eventId
+    data = await models.Events.update(
+        { activeChat: activeChat,
+          activePoll: activePoll,
+          privateWebinar: privateWebinar,
+          activeEvent: activeEvent
         },
         { where: { id: eventId } }
     )

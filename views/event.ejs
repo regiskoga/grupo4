@@ -55,6 +55,11 @@
                                                     <input type="hidden" value="<%=userData.id%>" name="eventId" id="eventId">    
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label for="eventTitle" class="form-label">Subtítulo</label>
+                                                    <input type="text" class="form-control" id="eventSubtitle"
+                                                        value="<%=userData.subtitle%>">
+                                                </div>
+                                                <div class="mb-3">
                                                     <label for="accessLink" class="form-label">Link de Acesso</label>
                                                     <a href="./access?event=<%=userData.id%>" id="eventUrl" target="_blank"
                                                         class="form-control text-decoration-none"></a>
@@ -119,28 +124,28 @@
                                     <div class="row mx-3">
                                         <div class="col-3">
                                             <div class="form-check form-switch mx-3 mt-2">
-                                                <input class="form-check-input" type="checkbox" id="check1"
+                                                <input class="form-check-input" type="checkbox" onchange="optionsChange()" id="activeChat"
                                                     <%=userData.activeChat=='1' ? 'checked' : '' %>>
                                                 <label class="form-check-label" for="check1">Chat</label>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-check form-switch mx-3 mt-2">
-                                                <input class="form-check-input" type="checkbox" id="check2"
+                                                <input class="form-check-input" type="checkbox" onchange="optionsChange()" id="activePoll"
                                                     <%=userData.activePoll=='1' ? 'checked' : '' %>>
                                                 <label class="form-check-label" for="check2">Enquete</label>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-check form-switch mx-3 mt-2">
-                                                <input class="form-check-input" type="checkbox" id="check2"
+                                                <input class="form-check-input" type="checkbox" onchange="optionsChange()" id="privateWebinar"
                                                     <%=userData.privateWebinar=='1' ? 'checked' : '' %>>
                                                 <label class="form-check-label" for="check2">Evento Privado</label>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-check form-switch mx-3 mt-2">
-                                                <input class="form-check-input" type="checkbox" id="check2"
+                                                <input class="form-check-input" type="checkbox" onchange="optionsChange()" id="activeEvent"
                                                     <%=userData.activeEvent=='1' ? 'checked' : '' %>>
                                                 <label class="form-check-label" for="check2">Evento Ativo</label>
                                             </div>
@@ -162,7 +167,7 @@
                             </div>
                             <div class="card mb-2">
                                 <div class="card-header">
-                                    <h5 class="card-title">Inscritos</h5>
+                                    <h5 class="card-title">Acessos</h5>
                                 </div>
                                 <div class="card-body">
                                     <table id="subscribers" class="display" style="width:100%">

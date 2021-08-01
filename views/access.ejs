@@ -67,16 +67,10 @@
         </div>
 
     </div>
-
     <script>
-        function changeBackground(color) {
-            document.body.style.background = color;
-        }
         const jsonResults = '<%- JSON.stringify(results) %>';
-        const results = JSON.parse(jsonResults)
-        window.addEventListener("load", function () { changeBackground(results.backgroundColor) });
     </script>
-
+    <script src="./js/access.js"></script>
 </body>
 
 </html>
