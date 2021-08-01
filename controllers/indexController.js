@@ -23,7 +23,7 @@ module.exports.access = (async (req, res) => {
     res.render('access', { 
       results, 
       moment: moment,
-      title: "nome do evento"
+      title: "Acesse o evento"
      });
   }
 })

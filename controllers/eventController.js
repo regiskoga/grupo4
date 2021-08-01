@@ -6,6 +6,7 @@ const querystring = require('querystring');
 const session = require('express-session');
 const moment = require('moment');
 moment.locale('pt-BR')
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../public/uploads'))
@@ -15,7 +16,6 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage });
-
 
 module.exports = (async (req, res) => {
     const userData = await models.Events.findOne({ where: { id: req.query.id } })
@@ -35,3 +35,22 @@ module.exports.changeImage = ([upload.single('imageFile'), (req, res) => {
     res.status(204).end()
 
 }])
+
+module.exports.formDataChange = (async (req, res) => {
+    const headerColor = req.body.headerColor
+    const footerColor = req.body.footerColor
+    const fontColor = req.body.fontColor
+    const backgroundColor = req.body.backgroundColor
+    const eventId = req.body.eventId
+    const userData = req.body.userData
+    data = await models.Events.update(
+        { headerColor: headerColor,
+          footerColor: footerColor,
+          fontColor: fontColor,
+          backgroundColor: backgroundColor
+        },
+        { where: { id: eventId } }
+    )
+    res.status(204).end()
+
+})

@@ -25,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret:'senha_forte',
   maxAge: 480000,
-  resave:false
+  resave:true,
+  saveUninitialized: true
 }));
 
 
