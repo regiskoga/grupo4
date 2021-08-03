@@ -6,4 +6,5 @@ router.get('/', eventController);
 router.post('/changeImage', eventController.changeImage);
 router.post('/formColorChange', eventController.formColorChange);
 router.post('/formOptionsChange', eventController.formOptionsChange);
+router.get('/new', eventController.newEvent);
 module.exports = router;

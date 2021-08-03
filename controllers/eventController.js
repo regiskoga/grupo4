@@ -72,3 +72,7 @@ module.exports.formOptionsChange = (async (req, res) => {
     res.status(204).end()
 
 })
+
+module.exports.newEvent = (async (req, res) => {
+    res.render('newEvent')
+})
