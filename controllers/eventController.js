@@ -76,3 +76,8 @@ module.exports.formOptionsChange = (async (req, res) => {
 module.exports.newEvent = (async (req, res) => {
     res.render('newEvent')
 })
+
+module.exports.registration = (async (req, res) => {
+    data = req.body
+    
+})
