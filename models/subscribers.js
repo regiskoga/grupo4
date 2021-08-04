@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Subscribers.init({
     id: {
       type: DataTypes.NUMBER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     eventId: DataTypes.NUMBER,
     username: DataTypes.STRING,

@@ -56,10 +56,10 @@ module.exports.auth = (async (req, res, next) => {
       }
       if (response) {
         req.session.estaAutenticado = true;
-        req.session.userId = req.body.id;
-        req.session.email = req.body.email;
-        req.session.name = req.body.name;
-        req.session.userType = req.body.userType;
+        req.session.userId = userData.id;
+        req.session.email = userData.email;
+        req.session.name = userData.name;
+        req.session.userType = userData.userType;
 
         res.redirect('/admin')
       } else {

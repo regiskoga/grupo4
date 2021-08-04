@@ -72,3 +72,25 @@ module.exports.formOptionsChange = (async (req, res) => {
     res.status(204).end()
 
 })
+
+module.exports.new = (async (req, res) => {
+    res.render('newEvent')
+
+})
+
+module.exports.registration = (async (req, res) => {
+    
+    data = req.body;
+    eventTerm = new Date(req.body.eventDate + " " + req.body.eventTime)
+    eventPeriod = parseInt(req.body.eventPeriod)
+    record = {
+        idUser: req.session.userId,
+        title: data.title,
+        subtitle: data.subtitle,
+        iframe: data.iframe,
+        eventTerm: eventTerm,
+        eventPeriod: eventPeriod
+    }
+    console.log(record)
+    await models.Events.create(record).then(result => res.redirect('./?id=' + result.id))
+})

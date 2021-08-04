@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Events.init({
     id: {
       type: DataTypes.NUMBER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     idUser: DataTypes.NUMBER,
     title: DataTypes.STRING,
