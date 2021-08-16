@@ -13,9 +13,6 @@ $("#pop").on("click", function () {
     $('#imageModal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
 });
 
-// creates the clickable url
-//const jsonResults = '<%- JSON.stringify(userData) %>';
-//const results = JSON.parse(jsonResults)
 const link = location.protocol + '//' + location.host + location.pathname;
 eventId = document.getElementById("eventId").value
 document.getElementById("eventUrl").innerHTML = link.replace('/event', '') + "/live?event=" + eventId;
@@ -25,9 +22,7 @@ function sendPost(url, data){
     request.open("POST", url, true)
     request.setRequestHeader("Content-type", "application/json")
     request.send(JSON.stringify(data))
-    // request.onload = function(){
-    //     console.log(this.responseText)
-    // }
+    
     return request.responseText
 }
 
