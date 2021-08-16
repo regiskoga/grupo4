@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const querystring = require('querystring');
 const session = require('express-session');
 const moment = require('moment')
+const express = require('express')
+const app = express()
 moment.locale('pt-BR')
 
 module.exports = (req, res) => {
@@ -17,21 +19,25 @@ module.exports = (req, res) => {
 
 }
 
-module.exports.access = (async (req, res) => {
+module.exports.access = (async (req, res) => { //post from live login 
+  console.log(req.body)
   const results = await models.Events.findOne({ where: { id: req.query.event } })
   if (typeof results !== 'undefined' && results !== null) {
     res.render('access', { 
       results, 
       moment: moment,
-      title: "Acesse o evento"
+      title: "Acesse o evento",
+      accessData: req.body
      });
   }
+
 })
 
 module.exports.createSubscriber = (async (req, res) => {
   const data = req.body
+  console.log(data)
   await models.Subscribers.create(data)
-  res.status(201).redirect('/live?event=' + req.body.eventId)
+  res.status(201).redirect('/live?event=' + data.eventId + '&username=' + data.username +'&email=' + data.email)
 })
 
 module.exports.exit = (req, res) => {

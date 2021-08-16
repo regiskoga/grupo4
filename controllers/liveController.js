@@ -16,30 +16,24 @@ const firebaseConfig = { //obtido no site do firebase (criação de app)
 firebase.initializeApp(firebaseConfig)
 const database = firebase.database();
 
-function writeUserData(userId, userName, email, message) {
-  firebase.database().ref('users/' + userId).set({
-    userName: userName,
+function writeUserData(username, email, eventId) {
+  let msgbase = firebase.database().ref(eventId)
+  let msgrec = msgbase.push()
+  msgrec.set({
+    username: username,
     email: email,
-    Message : message
-  });
+    sentAt: Date.now()
+  })
 }
 
-//module.exports = (async (req, res) => {
-  // const eventData = await models.Events.findOne({ where: { id: req.query.event } })
-  // if (typeof eventData !== 'undefined' && eventData !== null) {
-  //   res.render('index', {  //index is EJS filename
-  //     title: 'Sistema de Transmissão',
-  //     erro: ''
-  //   });
-  //   res.render('live', { eventData, moment: moment });
-  // }
-//})
-
 module.exports = (async (req, res) => {
-  const results = await models.Events.findOne({ where: { id: req.query.event } })
-  
-  writeUserData('333', 'Regis', 'tradrek@gmail.com', 'Esta é uma mensagem!')
+  const data = req.query
+  const results = await models.Events.findOne({ where: { id: data.event } })
+  writeUserData(data.username, data.email, data.event)
   if (typeof results !== 'undefined' && results !== null) {
-    res.render('live', { results, moment: moment });
+    res.render('live', {
+      results,
+      moment: moment
+    });
   }
-  })
+})

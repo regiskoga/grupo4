@@ -18,6 +18,23 @@
             user-select: none;
         }
 
+        .chat {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: stretch;
+
+        }
+
+        .msgbox {
+            height: 80%;
+        }
+
+        .inputmsg {
+            background-color: green;
+            height: 20%;
+        }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -30,8 +47,14 @@
     <header id="header" class="navbar navbar-dark sticky-top bg-primary px-3">
         <a class="navbar text-decoration-none" href="#">
             <img src="./img/logo.png" alt="" height="60rem" class="d-inline-block align-text-top">
-            <div class="px-3 textHeader"><h3 class=""><%=results.title%></h3>
-            <p class="muted textHeader"><%=results.subtitle%></p></div>
+            <div class="px-3 textHeader">
+                <h3>
+                    <%=results.title%>
+                </h3>
+                <p class="muted textHeader">
+                    <%=results.subtitle%>
+                </p>
+            </div>
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -53,14 +76,24 @@
                     <div class="col-md-9">
                         <div class="ratio ratio-16x9">
                             <iframe class="resp-iframe" src="<%=results.iframe%>"
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                title="Ao Vivo"></iframe>
+                                allow="autoplay; fullscreen; picture-in-picture" title="Ao Vivo"></iframe>
 
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 chat">
                         <!-- <iframe src="https://vimeo.com/live-chat/416389026/" width="100%" height="100%"
                             frameborder="0"></iframe> -->
+                        <div class="msgbox  overflow-scroll">
+                            <p>teste</p>
+                        </div>
+                        <div class="inputmsg">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="chatMessage" placeholder="mensagem"
+                                    aria-label="message" aria-describedby="message">
+                                <button class="btn btn-primary" onclick="sendMessage()" type="button"
+                                    id="message">Ir</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -76,12 +109,22 @@
     <script src="./js/admin.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script>
-            document.querySelector("#header").style.removeProperty("bg-primary");
+        document.querySelector("#header").style.removeProperty("bg-primary");
     </script>
     <script>
         const jsonResults = '<%- JSON.stringify(results) %>';
     </script>
     <script src="./js/live.js"></script>
+    <script>
+        function sendMessage() {
+            let chatMessage = document.querySelector("#chatMessage").value
+            if (chatMessage != "") {
+                alert(chatMessage)
+                document.querySelector("#chatMessage").value = ""
+            }
+        }
+        
+    </script>
 </body>
 
 </html>
