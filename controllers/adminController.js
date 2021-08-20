@@ -9,7 +9,9 @@ module.exports = (async (req, res, next) => {
   if (!req.session.estaAutenticado) {
     res.redirect('/?erro=1')
   }
-  const results = await models.Events.findAll({ order: [['activeEvent', 'DESC'], ['eventTerm']] })
+  const results = await models.Events.findAll({
+    where: { idUser: req.session.userId } 
+  })
     res.render('admin', { results, moment: moment }); 
 })
 

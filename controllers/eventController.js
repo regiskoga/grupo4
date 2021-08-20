@@ -12,7 +12,8 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/uploads'))
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        let nomeArquivo = Date.now() + path.extname(file.originalname)
+        cb(null, nomeArquivo)
     }
 });
 const upload = multer({ storage });
@@ -30,8 +31,15 @@ module.exports = (async (req, res) => {
 })
 
 module.exports.changeImage = ([upload.single('imageFile'), (req, res) => {
-    console.log(req.body);  // form fields
-    console.log(req.file); // form files
+    const filename = req.file.filename
+    const eventId = req.body.eventId
+    //console.log(req.body);  // form fields
+    //console.log(req.file); // form files
+    data = models.Events.update(
+        { loginImagePath: filename
+        },
+        { where: { id: eventId } }
+    )
     res.status(204).end()
 
 }])
