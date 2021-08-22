@@ -15,6 +15,7 @@ module.exports = (async (req, res, next) => {
   res.render('admin', { results, moment: moment });
 })
 
+//toggle between published or not
 module.exports.togglePublish = (async (req, res) => {
   if (!req.session.estaAutenticado) {
     res.redirect('/?erro=1')
