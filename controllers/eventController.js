@@ -40,7 +40,7 @@ module.exports.changeImage = ([upload.single('imageFile'), (req, res) => {
         },
         { where: { id: eventId } }
     )
-    res.status(204).redirect('/event?id='+ eventId);
+    res.status(204).redirect('/?id='+ eventId);
 
 }])
 

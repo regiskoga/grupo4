@@ -30,10 +30,6 @@ function sendPost(url, data) {
     return request.responseText
 }
 
-function formSubmit(){
-    document.getElementById("changeImage").submit()
-}
-
 function ColorChange() {
     event.preventDefault()
     const url = '/event/formColorChange'

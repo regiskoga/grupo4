@@ -78,8 +78,13 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="ratio ratio-16x9">
+                            <% if(results.activeEvent === 1){%>
                             <iframe class="resp-iframe" src="<%=results.iframe%>"
                                 allow="autoplay; fullscreen; picture-in-picture" title="Ao Vivo"></iframe>
+                            <% }else{ %>
+
+                                <h1 class="d-flex align-items-center justify-content-center">Este Evento não está ativo!</h1>
+                            <% } %>
 
                         </div>
                     </div>

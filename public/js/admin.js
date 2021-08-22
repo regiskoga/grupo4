@@ -1,5 +1,12 @@
 /* globals Chart:false, feather:false */
 
+
+function togglePublish(eventId) {
+  //alert(eventId)
+  window.location.href = "/admin/togglePublish?id=" + eventId;
+}
+
+
 (function () {
   'use strict'
 
