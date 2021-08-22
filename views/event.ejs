@@ -44,7 +44,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <a href="#" id="pop"><img class="img-thumbnail m-2" src="./img/1.jpg" alt=""></a>
+                                            <a href="#" id="pop"><img class="img-thumbnail m-2" src="./uploads/<%=userData.loginImagePath%>" alt=""></a>
                                         </div>
                                         <div class="col-md-9">
                                             <form>
@@ -204,15 +204,15 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <img class="img-thumbnail m-2" src="./img/<%=userData.loginImagePath%>" alt="">
+                        <img class="img-thumbnail m-2" src="./uploads/<%=userData.loginImagePath%>" alt="">
                         <form id="changeImage" enctype="multipart/form-data" action="./event/changeImage" method="post" >
                             <input class="form-control" type="file" id="imageFile" name="imageFile">
                             <input type="hidden" value="<%=userData.id%>" name="eventId">
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" id="record" form="changeImage" class="btn btn-primary">Gravar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                        <input type="submit" id="record" name="record" onclick="formSubmit()" form="changeImage" class="btn btn-primary" value="Alterar" data-bs-dismiss="modal" >
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
 // creates the image modal
 $("#pop").on("click", function () {
     $('#imageModal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
@@ -17,15 +21,18 @@ const link = location.protocol + '//' + location.host + location.pathname;
 eventId = document.getElementById("eventId").value
 document.getElementById("eventUrl").innerHTML = link.replace('/event', '') + "/live?event=" + eventId;
 
-function sendPost(url, data){
+function sendPost(url, data) {
     let request = new XMLHttpRequest()
     request.open("POST", url, true)
     request.setRequestHeader("Content-type", "application/json")
     request.send(JSON.stringify(data))
-    
+
     return request.responseText
 }
 
+function formSubmit(){
+    document.getElementById("changeImage").submit()
+}
 
 function ColorChange() {
     event.preventDefault()
@@ -45,7 +52,7 @@ function ColorChange() {
     sendPost(url, Data)
 }
 
-function optionsChange(){
+function optionsChange() {
     const url = '/event/formOptionsChange'
     const activeChat = (document.querySelector("#activeChat").checked ? 1 : 0)
     const activePoll = (document.querySelector("#activePoll").checked ? 1 : 0)
@@ -61,5 +68,3 @@ function optionsChange(){
     }
     sendPost(url, Data)
 }
-
-
