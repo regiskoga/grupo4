@@ -44,6 +44,21 @@ module.exports.changeImage = ([upload.single('imageFile'), (req, res) => {
 
 }])
 
+module.exports.logoChange = (req, res) => {
+    console.log(req.body)
+    // const filename = req.file.filename
+    // const eventId = req.body.eventId
+    // //console.log(req.body);  // form fields
+    // //console.log(req.file); // form files
+    // data = models.Events.update(
+    //     { loginImagePath: filename
+    //     },
+    //     { where: { id: eventId } }
+    // )
+    // res.status(204).redirect('/?id='+ eventId);
+
+}
+
 module.exports.formColorChange = (async (req, res) => {
     const headerColor = req.body.headerColor
     const footerColor = req.body.footerColor

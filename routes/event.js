@@ -8,4 +8,5 @@ router.post('/formColorChange', eventController.formColorChange);
 router.post('/formOptionsChange', eventController.formOptionsChange);
 router.get('/new', eventController.new);
 router.post('/registration', eventController.registration);
+router.post('/logoChange', eventController.logoChange);
 module.exports = router;

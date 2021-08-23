@@ -64,3 +64,16 @@ function optionsChange() {
     }
     sendPost(url, Data)
 }
+
+function logoChange() {
+    const url = '/event/logoChange'
+    var answer = window.confirm("Alterar o Logotipo?");
+    if (answer) {
+        data = document.querySelector('#imgChange').value
+        alert(data)
+        sendPost(url, Data)
+    }
+    else {
+        document.querySelector('#imgChange').value = ""
+    }
+}
