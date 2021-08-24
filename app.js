@@ -36,6 +36,7 @@ app.use('/admin', adminRouter);
 app.use('/event', eventRouter);
 app.use('/live', liveRouter);
 app.use('/newUser',require('./routes/user'));
+app.use('/user',require('./routes/showUser'));
 
 
 // catch 404 and forward to error handler
