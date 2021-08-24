@@ -4,11 +4,12 @@ const moment = require('moment')
 moment.locale('pt-BR')
 
 module.exports = (async (req, res) => {
+  let thisPage = '2'
   if (!req.session.estaAutenticado) {
     res.redirect('/?erro=1')
   }
   const results = await models.Users.findAll()
-  res.render('subscribers', { results, moment: moment });
+  res.render('subscribers', { results, moment: moment, thisPage });
 })
 
 

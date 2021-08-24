@@ -41,6 +41,9 @@ module.exports.removeById = (async (req, res) => {
 
 module.exports.updateUser = (async (req, res) => {
     const form = req.body
+    const salt = await bcrypt.genSalt(10)
+    encrypted = await bcrypt.hash(form.password, salt)
+
     if (form.admin == "on") {
         dataAdmin = 1
     } else {
@@ -51,8 +54,9 @@ module.exports.updateUser = (async (req, res) => {
     } else {
         dataActive = 0
     }
-
-    if (req.body.password != "") {
+    console.log('teste: ' + encrypted)
+    if (req.body.password == "") {
+        console.log('sem passwod')
         const record = await models.Users.update(
             {
                 username: form.username,
@@ -64,9 +68,7 @@ module.exports.updateUser = (async (req, res) => {
             { where: { id: form.userId } }
         )
     } else {
-        const salt = await bcrypt.genSalt(10)
-        encrypted = await bcrypt.hash(form.password, salt)
-        console.log(encrypted)
+        console.log('com passwod')
         const record = await models.Users.update(
             {
                 username: form.username,

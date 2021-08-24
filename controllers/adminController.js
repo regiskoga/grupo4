@@ -6,13 +6,14 @@ moment.locale('pt-BR')
 const session = require('express-session');
 
 module.exports = (async (req, res, next) => {
+  let thisPage = '1'
   if (!req.session.estaAutenticado) {
     res.redirect('/?erro=1')
   }
   const results = await models.Events.findAll({
     where: { idUser: req.session.userId }
   })
-  res.render('admin', { results, moment: moment });
+  res.render('admin', { results, moment: moment, thisPage });
 })
 
 //toggle between published or not
