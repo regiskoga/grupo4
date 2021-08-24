@@ -8,7 +8,7 @@ module.exports.createUsers = (async (req, res) => {
     const users = req.body
     const salt = await bcrypt.genSalt(10)
     users.password = await bcrypt.hash(users.password, salt)
-    console.log(users)
+    //console.log(users)
     await models.Users.create(users)
     res.status(201).redirect('/inscritos')
 })
@@ -26,7 +26,7 @@ module.exports.showUserById = (async (req, res) => {
 module.exports.removeById = (async (req, res) => {
     userId = await req.body.userId
     await models.Users.destroy({
-        where:{
+        where: {
             id: req.body.userId
         }
     }).then(result => {
@@ -41,17 +41,17 @@ module.exports.removeById = (async (req, res) => {
 
 module.exports.updateUser = (async (req, res) => {
     const form = req.body
-    if(form.admin == "on"){
+    if (form.admin == "on") {
         dataAdmin = 1
-    }else{
+    } else {
         dataAdmin = 0
     }
-    if(form.active == "on"){
+    if (form.active == "on") {
         dataActive = 1
-    }else{
+    } else {
         dataActive = 0
     }
-    
+
     if (req.body.password != "") {
         const record = await models.Users.update(
             {
@@ -64,6 +64,9 @@ module.exports.updateUser = (async (req, res) => {
             { where: { id: form.userId } }
         )
     } else {
+        const salt = await bcrypt.genSalt(10)
+        encrypted = await bcrypt.hash(form.password, salt)
+        console.log(encrypted)
         const record = await models.Users.update(
             {
                 username: form.username,
@@ -71,12 +74,12 @@ module.exports.updateUser = (async (req, res) => {
                 email: form.email,
                 active: dataActive,
                 userType: dataAdmin,
-                password: form.password
+                password: encrypted
             },
             { where: { id: form.userId } }
         )
     }
-    res.redirect('/user/'+req.body.userId)
+    res.redirect('/user/' + req.body.userId)
 })
 
 
